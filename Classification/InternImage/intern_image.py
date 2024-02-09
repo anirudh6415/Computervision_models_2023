@@ -721,7 +721,7 @@ def main(model_name):
                              post_norm=False)
         weights_url = "https://huggingface.co/OpenGVLab/InternImage/resolve/main/internimage_t_1k_224.pth"
         checkpoint = torch.hub.load_state_dict_from_url(weights_url)
-        model.load_state_dict(checkpoint['model'])
+        model.load_state_dict(checkpoint['model'],strict=False)
 
     elif model_name == 'InternImage_S':
         model= InternImage(channels=64,
@@ -732,7 +732,7 @@ def main(model_name):
                               post_norm=False)
         weights_url = "https://huggingface.co/OpenGVLab/InternImage/resolve/main/internimage_s_1k_224.pth"
         checkpoint = torch.hub.load_state_dict_from_url(weights_url)
-        model.load_state_dict(checkpoint['model'])
+        model.load_state_dict(checkpoint['model'],strict=False)
 
     elif model_name == 'InternImage_B':
         model= InternImage(channels=112,
@@ -743,7 +743,7 @@ def main(model_name):
                              post_norm=True)
         weights_url = "https://huggingface.co/OpenGVLab/InternImage/resolve/main/internimage_b_1k_224.pth"
         checkpoint = torch.hub.load_state_dict_from_url(weights_url)
-        model.load_state_dict(checkpoint['model'])
+        model.load_state_dict(checkpoint['model'],strict=False)
 
     elif model_name == 'InternImage_L':
         model= InternImage(channels=160,
@@ -754,7 +754,7 @@ def main(model_name):
                               post_norm=True)
         weights_url = "https://huggingface.co/OpenGVLab/InternImage/resolve/main/internimage_l_22kto1k_384.pth"
         checkpoint = torch.hub.load_state_dict_from_url(weights_url)
-        model.load_state_dict(checkpoint['model'])
+        model.load_state_dict(checkpoint['model'],strict=False)
 
     return model
 
